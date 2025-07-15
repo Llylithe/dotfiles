@@ -1,0 +1,123 @@
+
+configuration {
+  modes: "window,drun,run,ssh";
+  font: "JetbrainsMono SemiBold 17";
+  drun-display-format: "{name}";
+}
+
+* {
+  bg: #181a1f;
+  bgt: #06070896;
+  t: transparent;
+  fg: #b0aeac;
+
+  selected-bg: @fg;
+  selected-fg: @bg;
+
+  active: #5a687e;
+  urgent: #aa4f54;
+}
+
+window {
+  fullscreen: true;
+  padding: 35% 30%;
+  transparency: "real";
+  background-color: @bgt;
+  border-color: @t;
+}
+
+listview {
+  border: 0 0 0 0;
+  padding: 40 10 0;
+  scrollbar: true;
+}
+
+scrollbar {
+    width:        15px;
+    border-radius:       7px;
+    handle-color: @fg;
+    handle-width: 13px;
+    padding:      0 5;
+}
+
+entry {
+    placeholder: "";
+}
+
+textbox {
+    text-color: @fg;
+}
+
+element {
+    border-radius:  7px;
+    padding: 8px;
+}
+element.normal.normal {
+    background-color: @t;
+    text-color:       @fg;
+}
+element.normal.urgent {
+    background-color: @t;
+    text-color:       @urgent;
+}
+element.normal.active {
+    background-color: @t;
+    text-color:       @active;
+}
+element.selected.normal {
+    background-color: @selected-bg;
+    text-color:       @selected-fg;
+}
+element.selected.urgent {
+    background-color: @selected-bg;
+    text-color:       @urgent;
+}
+element.selected.active {
+    background-color: @selected-bg;
+    text-color:       @selected-fg;
+}
+element.alternate.normal {
+    background-color: @t;
+    text-color:       @fg;
+}
+element.alternate.urgent {
+    background-color: @t;
+    text-color:       @urgent;
+}
+element.alternate.active {
+    background-color: @t;
+    text-color:       @active;
+}
+
+sidebar {
+    border:       2px 0 0;
+    border-color: @fg;
+}
+
+inputbar {
+    spacing:    0;
+    text-color: @fg;
+    padding:    2px;
+    children:   [ prompt, textbox-prompt-sep, entry, case-indicator ];
+}
+
+case-indicator,
+entry,
+prompt,
+button {
+    spacing:    0;
+    text-color: @fg;
+}
+
+button.selected {
+    background-color: @bg;
+    text-color:       @fg;
+}
+
+textbox-prompt-sep {
+    expand:     false;
+    str:        ":";
+    text-color: @fg;
+    margin:     0 0.3em 0 0;
+}
+// }}}
