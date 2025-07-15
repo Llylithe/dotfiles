@@ -1,0 +1,184 @@
+{
+  "margin-top": 5,
+  "margin-left": 10,
+  "margin-right": 10,
+
+  "modules-left": [
+    "group/window_stuff"
+  ],
+
+  "modules-center": [
+    "group/music_player" 
+  ],
+
+  "modules-right": [
+    "group/audio_light",
+    "group/power_net",
+    "clock"
+  ],
+
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 45,
+    "rewrite": {
+      "": "ᶻ 𝗓 𐰁"
+    },
+    "separate-outputs": true
+  },
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "*": 4,
+      "HDMI-A-1": 3
+    }
+  },
+
+  "group/audio_light": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "backlight"
+    ]
+  },
+
+  "group/power_net": {
+    "orientation": "horizontal",
+    "modules": [
+      "battery",
+      "network"
+    ]
+  },
+
+  "group/music_player": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/playerctl#backward",
+	  	"custom/playerctl#play",
+	  	"custom/playerctl#foward",
+	  	"custom/playerlabel"
+    ]
+  },
+
+  "group/window_stuff": {
+    "orientation": "horizontal",
+    "modules": [
+      "hyprland/workspaces",
+      "hyprland/window"
+    ]
+  },
+
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+
+  "cpu": {
+    "format": "  {usage}%",
+    "tooltip": false
+  },
+
+  "memory": {
+    "format": "{}%  "
+  },
+
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": ["", "", ""]
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-full": "{icon}  {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "  {signalStrength}%",
+    "format-disconnected": "No wifi :(",
+    "tooltip-format": "  {ifname} via {gwaddri}",
+    "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+    "interval": 1,
+    "on-click": "nm-connection-editor"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "tooltip": true,
+    "tooltip-format": " {percent}%",
+    "format-icons": [
+      "<span color='#dde2ef'>  </span>",
+      "<span color='#dde2ef'> 󰽧 </span>",
+      "<span color='#dde2ef'>  </span>",
+      "<span color='#dde2ef'> 󰃠 </span>"
+    ]
+  },
+
+  "custom/playerctl#backward": {
+		"format": " 󰒮 ",
+		"on-click": "playerctl previous",
+		"on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-",
+		"on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+",
+		"tooltip": false
+	},
+	"custom/playerctl#foward": {
+		"format": " 󰒭 ",
+		"on-click": "playerctl next",
+		"on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-",
+		"on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+",
+		"tooltip": false
+	},
+	"custom/playerctl#play": {
+		"exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+		"format": "{icon}",
+		"format-icons": {
+			"Paused": "<span>  </span>",
+			"Playing": "<span>  </span>",
+			"Stopped": "<span>  </span>"
+		  },
+		"on-click": "playerctl play-pause",
+		"on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-",
+		"on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+",
+		"return-type": "json"
+	},
+	"custom/playerlabel": {
+		"exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+		"format": "<span>| 󰎈 {} 󰎈 |</span>",
+		"max-length": 40,
+		"on-click": "",
+		"return-type": "json"
+	}
+}
+
