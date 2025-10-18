@@ -1,0 +1,43 @@
+* {
+    all: unset;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 12px;
+    color: white;
+}
+
+.notification {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 16px;
+    padding: 10px;
+    margin: 15px;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.image {
+    min-width: 64px;
+    min-height: 64px;
+    margin-right: 16px;
+    border-radius: 8px;
+}
+
+.notification-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.notification .title {
+    font-weight: bold;
+    color: white;
+}
+
+.notification .body {
+    color: white;
+}
+
+.notification .app-name {
+    font-style: italic;
+    color: white;
+}
