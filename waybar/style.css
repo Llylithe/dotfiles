@@ -77,7 +77,7 @@ button:hover {
 #clock{
   background-color: rgba(0, 0, 0, 0.6);
   color: @text;
-  border-radius: 15px;
+  border-radius: 8px;
   padding: 0 20px;
   margin: 6px
 }
@@ -86,7 +86,7 @@ button:hover {
 #window{
   background-color: rgba(0, 0, 0, 0.6);
   color: @text;
-  border-radius: 15px;
+  border-radius: 8px;
   padding: 0 20px;
   box-shadow: 4px 0 8px -4px rgba(0, 0, 0, 0.4);
   margin: 6px
@@ -98,7 +98,7 @@ button:hover {
 
 .modules-center {
   background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 15px;
+  border-radius: 8px;
   padding: 0 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
   margin: 6px
