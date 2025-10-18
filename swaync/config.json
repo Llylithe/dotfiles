@@ -1,0 +1,12 @@
+{
+  "position": "top-right",
+  "timeout": 5000,
+  "control-center-position": "top-right",
+  "layer": "overlay",
+  "notification-visibility": {
+    "default-timeout": 5000,
+    "low": true,
+    "normal": true,
+    "critical": true
+}
+
