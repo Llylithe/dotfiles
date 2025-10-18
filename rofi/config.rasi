@@ -1,3 +1,4 @@
+// nvim: fdm=marker
 
 configuration {
   modes: "window,drun,run,ssh";
@@ -6,21 +7,23 @@ configuration {
 }
 
 * {
+  // general
   bg: #181a1f;
   bgt: #06070896;
   t: transparent;
-  fg: #b0aeac;
+  fg: #9bb2bf;
 
   selected-bg: @fg;
   selected-fg: @bg;
 
+  // for windows
   active: #5a687e;
   urgent: #aa4f54;
 }
 
 window {
   fullscreen: true;
-  padding: 35% 30%;
+  padding: 35% 30%;     
   transparency: "real";
   background-color: @bgt;
   border-color: @t;
@@ -44,6 +47,7 @@ entry {
     placeholder: "";
 }
 
+
 textbox {
     text-color: @fg;
 }
@@ -65,8 +69,8 @@ element.normal.active {
     text-color:       @active;
 }
 element.selected.normal {
-    background-color: @selected-bg;
-    text-color:       @selected-fg;
+    background-color: #ffffff10;
+    text-color:       #c5cbd9;
 }
 element.selected.urgent {
     background-color: @selected-bg;
