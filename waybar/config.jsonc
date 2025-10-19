@@ -21,7 +21,7 @@
     "format": "{}",
     "max-length": 45,
     "rewrite": {
-      "": "ᶻ 𝗓 𐰁"
+      "": "꒰ᐢ. .ᐢ꒱₊˚⊹"
     },
     "separate-outputs": true
   },
@@ -65,8 +65,8 @@
   "group/window_stuff": {
     "orientation": "horizontal",
     "modules": [
-      "hyprland/workspaces",
-      "hyprland/window"
+      "hyprland/workspaces"
+      /* "hyprland/window" */
     ]
   },
 
@@ -118,6 +118,8 @@
 
   "pulseaudio": {
     "format": "{icon}  {volume}%",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-",
+		"on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": "",
@@ -146,7 +148,7 @@
     ]
   },
 
-  "custom/playerctl#backward": {
+  /* "custom/playerctl#backward": {
 		"format": " 󰒮 ",
 		"on-click": "playerctl previous",
 		"on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-",
@@ -172,10 +174,10 @@
 		"on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-",
 		"on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+",
 		"return-type": "json"
-	},
+	}, */
 	"custom/playerlabel": {
 		"exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-		"format": "<span>| 󰎈 {} 󰎈 |</span>",
+		"format": "<span> 󰎈 {} </span>",
 		"max-length": 40,
 		"on-click": "",
 		"return-type": "json"
