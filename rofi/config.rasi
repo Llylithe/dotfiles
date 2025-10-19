@@ -2,16 +2,16 @@
 
 configuration {
   modes: "window,drun,run,ssh";
-  font: "JetbrainsMono SemiBold 17";
+  font: "JetbrainsMono SemiBold 15";
   drun-display-format: "{name}";
 }
 
 * {
   // general
   bg: #181a1f;
-  bgt: #06070896;
+  bgt: rgba(30,31,51,0.8);
   t: transparent;
-  fg: #9bb2bf;
+  fg: #b5bcc4;
 
   selected-bg: @fg;
   selected-fg: @bg;
@@ -23,7 +23,7 @@ configuration {
 
 window {
   fullscreen: true;
-  padding: 35% 30%;     
+  padding: 35% 35%;     
   transparency: "real";
   background-color: @bgt;
   border-color: @t;
@@ -38,7 +38,7 @@ listview {
 scrollbar {
     width:        15px;
     border-radius:       7px;
-    handle-color: @fg;
+    handle-color: #b5bcc4;
     handle-width: 13px;
     padding:      0 5;
 }
@@ -70,7 +70,7 @@ element.normal.active {
 }
 element.selected.normal {
     background-color: #ffffff10;
-    text-color:       #c5cbd9;
+    text-color:       #dae1e8;
 }
 element.selected.urgent {
     background-color: @selected-bg;
